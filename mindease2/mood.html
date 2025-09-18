@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Ease - Mood Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0fff0, #e6f2ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #339966;
+      margin-bottom: 10px;
+    }
+
+    .greeting {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .mood-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .mood-buttons button {
+      font-size: 2rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .mood-buttons button:hover {
+      transform: scale(1.1);
+    }
+
+    canvas {
+      max-width: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Track Your Mood 🌸</h2>
+  <p class="greeting">How are you feeling today?</p>
+
+  <div class="mood-buttons">
+    <button onclick="logMood('Happy')">😊</button>
+    <button onclick="logMood('Neutral')">😐</button>
+    <button onclick="logMood('Sad')">😢</button>
+  </div>
+
+  <canvas id="moodChart"></canvas>
+
+  <script>
+    const moodData = {
+      labels: [],
+      datasets: [{
+        label: 'Mood Over Time',
+        data: [],
+        backgroundColor: '#339966',
+        borderColor: '#339966',
+        fill: false,
+        tension: 0.3
+      }]
+    };
+
+    const config = {
+      type: 'line',
+      data: moodData,
+      options: {
+        scales: {
+          y: {
+            ticks: {
+              callback: function(value) {
+                return ['😢', '😐', '😊'][value];
+              },
+              stepSize: 1,
+              min: 0,
+              max: 2
+            }
+          }
+        }
+      }
+    };
+
+    const moodChart = new Chart(document.getElementById('moodChart'), config);
+
+    function logMood(mood) {
+      const moodMap = { 'Sad': 0, 'Neutral': 1, 'Happy': 2 };
+      const now = new Date().toLocaleTimeString();
+
+      moodData.labels.push(now);
+      moodData.datasets[0].data.push(moodMap[mood]);
+      moodChart.update();
+    }
+  </script>
+</body>
+</html>

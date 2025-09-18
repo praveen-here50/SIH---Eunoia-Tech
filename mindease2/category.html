@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Ease - Choose a Theme</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0fff0, #e6f2ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #339966;
+      margin-bottom: 20px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #339966;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2a7d5f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Choose Your Inspiration </h2>
+    <select id="theme">
+      <option value="">Select a theme</option>
+      <option value="education">Education</option>
+      <option value="motivation">Motivation</option>
+      <option value="success">Success</option>
+      <option value="perseverance">Perseverance</option>
+      <option value="time">Time Management</option>
+      <option value="confidence">Self-Confidence</option>
+    </select>
+    <button onclick="goToStory()">Read Story</button>
+  </div>
+
+  <script>
+    function goToStory() {
+      const theme = document.getElementById("theme").value;
+      if (!theme) {
+        alert("Please select a theme.");
+        return;
+      }
+      window.location.href = `story.html?theme=${encodeURIComponent(theme)}`;
+    }
+  </script>
+</body>
+</html>

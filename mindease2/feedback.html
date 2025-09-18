@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Ease - Daily Feedback</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0fff0, #e6f2ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      color: #339966;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .greeting {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #339966;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2a7d5f;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Daily Reflection 🌸</h2>
+    <p class="greeting">Take a moment to reflect on your day. Your feelings matter 💚</p>
+
+    <form id="feedbackForm">
+      <label for="mood">How was your mood today?</label>
+      <select id="mood" required>
+        <option value="">Select</option>
+        <option value="Happy">😊 Happy</option>
+        <option value="Neutral">😐 Neutral</option>
+        <option value="Sad">😢 Sad</option>
+      </select>
+
+      <label for="energy">How was your energy level?</label>
+      <select id="energy" required>
+        <option value="">Select</option>
+        <option value="High">⚡ High</option>
+        <option value="Medium">🔋 Medium</option>
+        <option value="Low">😴 Low</option>
+      </select>
+
+      <label for="gratitude">What are you grateful for today?</label>
+      <input type="text" id="gratitude" placeholder="e.g. A kind friend, good weather" required />
+
+      <label for="stress">Did anything stress you out?</label>
+      <textarea id="stress" rows="3" placeholder="Share if you'd like..."></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <p class="message" id="thankYouMessage"></p>
+  </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const mood = document.getElementById("mood").value;
+      const energy = document.getElementById("energy").value;
+      const gratitude = document.getElementById("gratitude").value;
+
+      if (!mood || !energy || !gratitude) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      document.getElementById("thankYouMessage").textContent =
+        "Thank you for sharing, Revathi 🌿. Your reflection has been saved.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
