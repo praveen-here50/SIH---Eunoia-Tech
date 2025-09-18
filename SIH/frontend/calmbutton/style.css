@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fdf9;
+  color: #2e4d2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-header {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2e4d2c;
+}
+
+.screen {
+  display: none;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+.circle {
+  margin: 20px auto;
+  border-radius: 50%;
+  background-color: #a8d5ba;
+  transition: all 4s ease-in-out;
+  width: 80px;
+  height: 80px;
+}
+
+.static-circle {
+  width: 150px;
+  height: 150px;
+  background-color: #d9f5e3;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sub-quote {
+  font-size: 14px;
+  color: #567d56;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #3d5c3d;
+  font-style: italic;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background-color: #2e4d2c;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #3a6438;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: #2e4d2c;
+  border: 2px solid #2e4d2c;
+}
+
+.btn.secondary:hover {
+  background-color: #eaf8ed;
+}
+
+.illustration {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

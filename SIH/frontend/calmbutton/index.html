@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Quick Calm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="brand">MindEase</h1>
+  </header>
+
+  <!-- Start Screen -->
+  <div id="startScreen" class="screen active">
+    <h2>Take a deep breath.</h2>
+    <p class="sub-quote">You deserve a moment of calm.</p>
+    <div class="circle static-circle"></div>
+    <button id="startBtn" class="btn primary">Start 3-Minute Calm</button>
+  </div>
+
+  <!-- Breathing Exercise Screen -->
+  <div id="exerciseScreen" class="screen">
+    <div class="circle" id="circle"></div>
+    <p id="stepText">Inhale...</p>
+    <p id="quote" class="quote"></p>
+    <button id="endBtn" class="btn secondary">✨ End Session</button>
+  </div>
+
+  <!-- Completion Screen -->
+  <div id="completionScreen" class="screen">
+    <div class="illustration">🌞</div>
+    <h2>Well done ✨</h2>
+    <p>Your mind thanks you for pausing.</p>
+    <div class="options">
+      <button id="homeBtn" class="btn primary">🏡 Back to Home</button>
+      <button id="againBtn" class="btn secondary">🔄 Do it Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MindEase Chatroom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">🌿 MindEase</div>
+  <nav>
+    <button onclick="showFeatured()">Community Rooms</button>
+    <button onclick="showSupport()">1:1 Support</button>
+    <button onclick="showAccount()">Account</button>
+  </nav>
+</header>
+
+<!-- Main Layout -->
+<div class="main">
+  <!-- Left side: Featured or All Rooms -->
+  <section class="rooms" id="roomSection">
+    <h2>Featured Rooms</h2>
+    <div class="room-card" onclick="openChat('🎓 Exam Stress Support')">🎓 Exam Stress Support</div>
+    <div class="room-card" onclick="openChat('🌙 Sleep & Relaxation')">🌙 Sleep & Relaxation</div>
+    <div class="room-card" onclick="openChat('⚖ Work-Life Balance')">⚖ Work-Life Balance</div>
+    <div class="room-card" onclick="openChat('💚 Anxiety Relief')">💚 Anxiety Relief</div>
+  </section>
+
+  <!-- Right side: Chat -->
+  <section class="chat" id="chatSection">
+    <div class="chat-placeholder" id="chatPlaceholder">
+      <p>Select a room to start chatting</p>
+    </div>
+
+    <div class="chat-window hidden" id="chatWindow">
+      <div class="chat-header">
+        <h2 id="chatRoomName"></h2>
+        <p id="chatRoomDesc"></p>
+        <button id="fullscreenBtn">⛶</button>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="input-box">
+        <input type="text" id="msgInput" placeholder="Type a message...">
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+    
+
+
