@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f0fff0, #e6f2ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  z-index: 2;
+}
+
+h2 {
+  color: #339966;
+  margin-bottom: 20px;
+}
+
+.inputs label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+svg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 12;
+}
+
+circle:first-child {
+  stroke: #eee;
+}
+
+#progress {
+  stroke: #339966;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #444;
+}
+
+.controls button {
+  background-color: #339966;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #2a7d5f;
+}
+
+#quote {
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(51, 153, 102, 0.2);
+  animation: float 10s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+  width: 80px; height: 80px; top: 10%; left: 5%;
+}
+.bubble:nth-child(2) {
+  width: 100px; height: 100px; bottom: 15%; right: 10%;
+}
+.bubble:nth-child(3) {
+  width: 60px; height: 60px; top: 50%; left: 80%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}

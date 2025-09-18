@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Ease - Pomodoro Timer</title>
+  <link rel="stylesheet" href="pomodoro.css" />
+</head>
+<body>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <div class="container">
+    <h2>Mind Ease Pomodoro 🌿</h2>
+
+    <div class="inputs">
+      <label>Study Time (min)</label>
+      <input type="number" id="studyTime" value="25" min="1" />
+      <label>Break Time (min)</label>
+      <input type="number" id="breakTime" value="5" min="1" />
+    </div>
+
+    <div class="circle">
+      <svg>
+        <circle cx="100" cy="100" r="90" />
+        <circle id="progress" cx="100" cy="100" r="90" />
+      </svg>
+      <div id="time">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <p id="quote">"Small steps every day lead to big results."</p>
+    <audio id="alarm" src="alarm1.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="pomodoro.js"></script>
+</body>
+</html>
